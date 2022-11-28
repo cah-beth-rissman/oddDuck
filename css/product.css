@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(4, 96, 30);
+    color: rgb(241, 233, 228);
+  }
+  
+  main{
+    width: 1024px;
+    margin: 3rem auto;
+    display: grid;
+    grid-template-columns: 250px 4fr;
+    grid-template-rows: 10rem 10rem 20rem 40%;
+  }
+  
+  #siteLogo {
+    width: 250px;
+    z-index: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    border-radius: 10%;
+  }
+  
+  h1 {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    font-size: 5rem;
+    line-height: .8;
+    margin: 3rem 0 1rem;
+  }
+  
+  section {
+    background-color: rgb(79, 210, 134);
+    padding: 2rem;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  section img {
+    width:  460px;
+    max-height: 26rem;
+    border: 5px solid transparent;
+  }
+  
+  
+  section img:hover {
+    border: 5px solid rgb(227, 241, 106)
+  }
+  
+  section.no-voting img:hover{
+    border: 5px solid transparent;
+    cursor: none;
+  }
+  
+  
+  ul{
+  background-color: aliceblue;
+  margin: 1rem;
+  }
+  li{
+  margin: .5rem;
+  }
+  
+  section + div {
+    background-color: rgb(116, 159, 116);
+    color: aliceblue;
+    font-size: 2rem;
+    padding: .5rem 1rem;
+    margin: 1rem;
+    height: max-content;
+    width: max-content;
+  
+  }
