@@ -5,7 +5,10 @@
   body{
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: rgb(4, 96, 30);
-    color: rgb(241, 233, 228);
+    color: rgb(14, 63, 32);
+  }
+  body h1 {
+    color: aliceblue;
   }
   
   main{
@@ -47,8 +50,9 @@
     justify-content: space-between;
   }
   
+  /* add responsive design for images */
   section img {
-    width:  460px;
+    width:  300px;
     max-height: 26rem;
     border: 5px solid transparent;
   }
