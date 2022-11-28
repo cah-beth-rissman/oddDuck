@@ -103,16 +103,16 @@ function renderProducts() {
   image3.src = Product.allProductsArray[product3].src;
 
   // update alt attributes
-  image1.alt = Product.allProductsArray[product1].src;
-  image2.alt = Product.allProductsArray[product2].src;
-  image3.alt = Product.allProductsArray[product3].src;
+  image1.alt = Product.allProductsArray[product1].name;
+  image2.alt = Product.allProductsArray[product2].name;
+  image3.alt = Product.allProductsArray[product3].name;
 
   //times shown on page
   Product.allProductsArray[product1].views++;
   Product.allProductsArray[product2].views++;
   Product.allProductsArray[product3].views++;
 
-} // closed our renderProduct function
+} // closes our renderProducts function
 
 // // function to handle clicks
 function handleProductClick(event) {
@@ -121,7 +121,8 @@ function handleProductClick(event) {
     alert('please click on a product');
 
   }
-  //   //how many times clicked on
+
+  //how many times clicked on
   clicks++;
   let clickProduct = event.target.alt;
   console.log(clickProduct);
@@ -157,25 +158,25 @@ function renderResults(){
 
 // product objects and call the constructor with the new operator
 
-new Product('Bag', '../images/bag.jpg');
-new Product('Banana', '../images/banana.jpg');
-new Product('Bathroom', '../images/bathroom.jpg');
-new Product('Boots', '../images/boots.jpg');
-new Product('Breakfast', '../images/breakfast.jpg');
-new Product('Bubblegum', '../images/bubblegum.jpg');
-new Product('Chair', '../images/chair.jpg');
-new Product('Cthulhu', '../images/cthulhu.jpg');
-new Product('Dog-Duck', '../images/dog-duck.jpg');
-new Product('Dragon', '../images/dragon.jpg');
-new Product('Pen', '../images/pen.jpg');
-new Product('Pet-Sweep', '../images/pet-sweep.jpg');
-new Product('Scissors', '../images/scissors.jpg');
-new Product('Shark', '../images/shark.jpg');
-new Product('Sweep', '../images/sweep.jpg');
-new Product('Tauntaun', '../images/tauntaun.jpg');
-new Product('Unicorn', '../images/unicorn.jpg');
-new Product('Water-can', '../images/water-can.jpg');
-new Product('Wine-glass', '../images/wine-glass.jpg');
+new Product('bag', '../images/bag.jpg');
+new Product('banana', '../images/banana.jpg');
+new Product('bathroom', '../images/bathroom.jpg');
+new Product('boots', '../images/boots.jpg');
+new Product('breakfast', '../images/breakfast.jpg');
+new Product('bubblegum', '../images/bubblegum.jpg');
+new Product('bhair', '../images/chair.jpg');
+new Product('cthulhu', '../images/cthulhu.jpg');
+new Product('dog-duck', '../images/dog-duck.jpg');
+new Product('dragon', '../images/dragon.jpg');
+new Product('pen', '../images/pen.jpg');
+new Product('pet-Sweep', '../images/pet-sweep.jpg');
+new Product('scissors', '../images/scissors.jpg');
+new Product('shark', '../images/shark.jpg');
+new Product('sweep', '../images/sweep.jpg');
+new Product('tauntaun', '../images/tauntaun.jpg');
+new Product('unicorn', '../images/unicorn.jpg');
+new Product('water-can', '../images/water-can.jpg');
+new Product('wine-glass', '../images/wine-glass.jpg');
 
 //call all functions
 renderProducts();
