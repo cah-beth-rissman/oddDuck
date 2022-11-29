@@ -1,46 +1,53 @@
+/* font-family: 'Poppins', sans-serif;
+font-family: 'Rubik Distressed', cursive;
+font-family: 'Secular One', sans-serif;
+font-family: 'Pacifico', cursive; */
 * {
     box-sizing: border-box;
   }
   
   body{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: rgb(4, 96, 30);
-    color: rgb(14, 63, 32);
-  }
-  body h1 {
-    color: aliceblue;
+    font-family: 'Pacifico', cursive;
+    background-color: rgb(21, 116, 180);
+    color: rgb(54, 47, 47);
   }
   
   main{
     width: 1024px;
     margin: 3rem auto;
     display: grid;
-    grid-template-columns: 250px 4fr;
-    grid-template-rows: 10rem 10rem 20rem 40%;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 20rem 10rem 20rem 40%;
   }
   
   #siteLogo {
-    width: 250px;
-    z-index: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    grid-column-start: 1;
-    grid-column-end: 3;
+    width: 200px;
     border-radius: 10%;
+    margin-left: 8em;
+    padding: 10px;
   }
   
   h1 {
-    grid-row-start: 1;
+    /* grid-row-start: 1;
     grid-row-end: 3;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    font-size: 5rem;
-    line-height: .8;
-    margin: 3rem 0 1rem;
+    grid-column-start: 1;
+    grid-column-end: 3; */
+    font-size: 4rem;
+    line-height: 1;
+    margin: 1rem 0 1rem;
+    color: aliceblue;
+    text-align: center;
+  }
+  h2 {
+    font-size: 3rem;
+    line-height: 1;
+    margin: 1rem 0 1rem;
+    color: aliceblue;
+    text-align: center;
   }
   
   section {
-    background-color: rgb(79, 210, 134);
+    /* background-color: rgb(190, 183, 183); */
     padding: 2rem;
     grid-row-start: 2;
     grid-row-end: 4;
@@ -53,13 +60,14 @@
   /* add responsive design for images */
   section img {
     width:  300px;
-    max-height: 26rem;
+    max-height: 18rem;
     border: 5px solid transparent;
+    border-radius: 10%;
   }
   
   
   section img:hover {
-    border: 5px solid rgb(227, 241, 106)
+    border: 5px dotted rgb(237, 80, 80)
   }
   
   section.no-voting img:hover{
@@ -71,18 +79,20 @@
   ul{
   background-color: aliceblue;
   margin: 1rem;
+  height: 400px;
+  overflow: scroll;
   }
+
   li{
   margin: .5rem;
   }
   
   section + div {
-    background-color: rgb(116, 159, 116);
+    background-color: rgba(18, 45, 202, 0.462);
     color: aliceblue;
     font-size: 2rem;
     padding: .5rem 1rem;
     margin: 1rem;
     height: max-content;
     width: max-content;
-  
   }

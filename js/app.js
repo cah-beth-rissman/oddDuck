@@ -64,7 +64,7 @@ let image3 = document.querySelector('section img:nth-child(3)');
 console.log(productContainer, resultButton, image1, image2, image3);
 
 let clicks = 0;
-let maxClicks = 5;
+let maxClicks = 25;
 console.log('click tracking' ,{clicks, maxClicks});
 
 // constructor function
@@ -89,11 +89,14 @@ function renderProducts() {
   let product3 = getRandomNumber();
   console.log(product1,product2,product3);
 
-  //   need to add not equal to product 3
-  //   while(product1 === product2){
-  //     product2 = getRandomNumber();
-  //   }
-  //   console.log(product1,product2,product3);
+  while(product1 === product3){
+    product3 = getRandomNumber();
+  }
+
+  while(product1 === product2 || product3 === product2){
+    product2 = getRandomNumber();
+  }
+  console.log(product1,product2,product3);
 
 
   // capture data about iamges so we can track the data in our objects
