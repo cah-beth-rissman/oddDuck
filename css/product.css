@@ -21,10 +21,10 @@ font-family: 'Pacifico', cursive; */
   }
   
   #siteLogo {
-    width: 200px;
+    width: 225px;
     border-radius: 10%;
-    margin-left: 8em;
-    padding: 10px;
+    margin-left:8em;
+    padding: 8px;
   }
   
   h1 {
@@ -37,6 +37,7 @@ font-family: 'Pacifico', cursive; */
     margin: 1rem 0 1rem;
     color: aliceblue;
     text-align: center;
+    text-shadow: 4px 4px 8px #081579;
   }
   h2 {
     font-size: 3rem;
@@ -44,6 +45,7 @@ font-family: 'Pacifico', cursive; */
     margin: 1rem 0 1rem;
     color: aliceblue;
     text-align: center;
+    text-shadow: 4px 4px 4px #414eb2;
   }
   
   section {
@@ -67,7 +69,7 @@ font-family: 'Pacifico', cursive; */
   
   
   section img:hover {
-    border: 5px dotted rgb(237, 80, 80)
+    border: 5px double rgb(222, 14, 14)
   }
   
   section.no-voting img:hover{
@@ -81,6 +83,8 @@ font-family: 'Pacifico', cursive; */
   margin: 1rem;
   height: 400px;
   overflow: scroll;
+  font-family: 'Courier New', Courier, monospace;
+  color: navy;
   }
 
   li{
