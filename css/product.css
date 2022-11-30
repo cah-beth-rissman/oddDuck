@@ -28,10 +28,6 @@ font-family: 'Pacifico', cursive; */
   }
   
   h1 {
-    /* grid-row-start: 1;
-    grid-row-end: 3;
-    grid-column-start: 1;
-    grid-column-end: 3; */
     font-size: 4rem;
     line-height: 1;
     margin: 1rem 0 1rem;
@@ -49,7 +45,6 @@ font-family: 'Pacifico', cursive; */
   }
   
   section {
-    /* background-color: rgb(190, 183, 183); */
     padding: 2rem;
     grid-row-start: 2;
     grid-row-end: 4;
