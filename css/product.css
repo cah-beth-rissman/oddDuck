@@ -95,3 +95,10 @@ font-family: 'Pacifico', cursive; */
     height: max-content;
     width: max-content;
   }
+
+  footer {
+    background-color: aliceblue;
+    width 90%;
+    margin: 10px;
+
+  }
