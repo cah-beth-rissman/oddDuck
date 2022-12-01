@@ -54,7 +54,7 @@ function renderProducts() {
   Product.allProductsArray[product2].views++;
   Product.allProductsArray[product3].views++;
 
-} 
+}
 
 function handleProductClick(event) {
   console.log('click event happening' , event);
@@ -90,6 +90,7 @@ function renderResults(){
     li.textContent = `${Product.allProductsArray[i].name} had ${Product.allProductsArray[i].views} views and were clicked on ${Product.allProductsArray[i].click} times`;
     ul.appendChild(li);
   }
+  showResultChart();
 }
 
 new Product('bag', 'images/bag.jpg');
@@ -116,4 +117,62 @@ new Product('wine-glass', 'images/wine-glass.jpg');
 renderProducts();
 
 productContainer.addEventListener('click', handleProductClick);
+
+function showResultChart(){
+  console.log(Product.allProductsArray);
+  console.log('chart is working');
+  let labels = [];
+  let voteCounts = [];
+  let showCounts = [];
+  let votePercentage = [];
+
+  for (let i = 0; i < Product.allProductsArray.length; i++) {
+  // update 4 arrays
+    console.log('Test from array' ,Product.allProductsArray[i].name);
+    labels[i] = Product.allProductsArray[i].name;
+    voteCounts[i] = Product.allProductsArray[i].click;
+    showCounts[i] = Product.allProductsArray[i].views;
+    votePercentage[i] = Math.floor(100 * (voteCounts[i] / showCounts[i]));
+
+  }
+
+
+
+  console.log('labels' ,labels);
+  console.log('voteCounts' ,voteCounts);
+  console.log('showCounts' ,showCounts);
+  console.log('votePercentage' ,votePercentage);
+
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Vote Count',
+        data: voteCounts,
+        backgroundColor: 'rgb(255,0,0)',
+      },
+      {
+        label: 'Times Shown',
+        data: showCounts,
+        backgroundColor: 'rgb(0,0,255)',
+      },
+      {
+        label: 'Vote Percentage',
+        data: votePercentage,
+        backgroundColor: 'gray'
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+
+  });
+}
 
