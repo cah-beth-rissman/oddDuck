@@ -6,7 +6,6 @@ Product.allProductsArray = [];
 let productContainer = document.querySelector('section');
 let resultButton = document.querySelector('section + div');
 
-//refactor lab 13
 let imageElements = document.getElementsByTagName('img');
 console.log('image Elements ',imageElements);
 let image1 = 0;
@@ -16,7 +15,7 @@ let image3 = 2;
 // let image1 = document.querySelector('section img:first-child');
 // let image2 = document.querySelector('section img:nth-child(2)');
 // let image3 = document.querySelector('section img:nth-child(3)');
-// console.log(productContainer, resultButton, image1, image2, image3);
+console.log(productContainer, resultButton, image1, image2, image3);
 
 let clicks = 0;
 let maxClicks = 25;
@@ -35,19 +34,18 @@ function Product(name, src, views, click) {
   } else {
     this.click = 0;
   }
-
   Product.allProductsArray.push(this);
 }
-// console.log('do we have Products? ',Product.allProductsArray);
+console.log('do we have Products? ',Product.allProductsArray);
 
 let savedProductString = localStorage.getItem('savedProduct');
-console.log('product strings',savedProductString);
+console.log('Product strings',savedProductString);
 //get item from local storage
 
 // send those through our constructor function
 if(savedProductString){
   let arraryOfNotProductObject = JSON.parse(savedProductString);
-  console.log('objects that don\'t know they are products?', arraryOfNotProductObject);
+  console.log('objects that dont know they are products?', arraryOfNotProductObject);
   // once we have object we are going to run them through our constructor function so that they are Product objects
 
   for(let i = 0; i < arraryOfNotProductObject.length; i++){
@@ -58,9 +56,9 @@ if(savedProductString){
       arraryOfNotProductObject[i].click
     );
   }
-  console.log('products',Product.allProductsArray);
+  console.log('sssssss',Product.allProductsArray);
 } else {
-  //callign the constructor function
+  //calling the constructor function
   new Product('bag', 'images/bag.jpg');
   new Product('banana', 'images/banana.jpg');
   new Product('bathroom', 'images/bathroom.jpg');
@@ -105,18 +103,21 @@ function renderProducts() {
   let product1 = Math.floor(Math.random() * Product.allProductsArray.length);
   let product2 = Math.floor(Math.random() * Product.allProductsArray.length);
   let product3 = Math.floor(Math.random() * Product.allProductsArray.length);
-  console.log(product1,product2,product3);
+  // console.log(product1,product2,product3);
 
   // while(product1 === product3){
   //   product3 = getRandomNumber();
   // }
 
-  while(product1 === image1 || product1 === image2){
+  while(product1 === image1 || product1 === product2){
     product1 = Math.floor(Math.random() * Product.allProductsArray.length);
   }
   while(product2 === image2 || product1 === product2){
     product2 = Math.floor(Math.random() * Product.allProductsArray.length);
   }
+  // while(product3 === image3 || product1 === product2){
+  //   product2 = Math.floor(Math.random() * Product.allProductsArray.length);
+  // }
   // setup a ref to the product array
   image1 = product1;
   image2 = product2;
@@ -199,29 +200,29 @@ renderProducts();
 productContainer.addEventListener('click', handleProductClick);
 
 function showResultChart(){
-  // console.log(Product.allProductsArray);
-  // console.log('chart is working');
-  // let labels = [];
-  // let voteCounts = [];
-  // let showCounts = [];
-  // let votePercentage = [];
+  console.log(Product.allProductsArray);
+  console.log('chart is working');
+  let labels = [];
+  let voteCounts = [];
+  let showCounts = [];
+  let votePercentage = [];
 
-  // for (let i = 0; i < Product.allProductsArray.length; i++) {
-  // // update 4 arrays
-  //   console.log('Test from array' ,Product.allProductsArray[i].name);
-  //   labels[i] = Product.allProductsArray[i].name;
-  //   voteCounts[i] = Product.allProductsArray[i].click;
-  //   showCounts[i] = Product.allProductsArray[i].views;
-  //   votePercentage[i] = Math.floor(100 * (voteCounts[i] / showCounts[i]));
+  for (let i = 0; i < Product.allProductsArray.length; i++) {
+  // update 4 arrays
+    console.log('Test from array' ,Product.allProductsArray[i].name);
+    labels[i] = Product.allProductsArray[i].name;
+    voteCounts[i] = Product.allProductsArray[i].click;
+    showCounts[i] = Product.allProductsArray[i].views;
+    votePercentage[i] = Math.floor(100 * (voteCounts[i] / showCounts[i]));
 
-  // }
+  }
 
 
 
-  // console.log('labels' ,labels);
-  // console.log('voteCounts' ,voteCounts);
-  // console.log('showCounts' ,showCounts);
-  // console.log('votePercentage' ,votePercentage);
+  console.log('labels' ,labels);
+  console.log('voteCounts' ,voteCounts);
+  console.log('showCounts' ,showCounts);
+  console.log('votePercentage' ,votePercentage);
 
   const ctx = document.getElementById('myChart');
 
