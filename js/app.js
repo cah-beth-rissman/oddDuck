@@ -11,15 +11,10 @@ console.log('image Elements ',imageElements);
 let image1 = 0;
 let image2 = 1;
 let image3 = 2;
-
-// let image1 = document.querySelector('section img:first-child');
-// let image2 = document.querySelector('section img:nth-child(2)');
-// let image3 = document.querySelector('section img:nth-child(3)');
 console.log(productContainer, resultButton, image1, image2, image3);
 
 let clicks = 0;
 let maxClicks = 25;
-// console.log('click tracking' ,{clicks, maxClicks});
 
 function Product(name, src, views, click) {
   this.name = name;
@@ -58,7 +53,6 @@ if(savedProductString){
   }
   console.log('sssssss',Product.allProductsArray);
 } else {
-  //calling the constructor function
   new Product('bag', 'images/bag.jpg');
   new Product('banana', 'images/banana.jpg');
   new Product('bathroom', 'images/bathroom.jpg');
@@ -80,10 +74,6 @@ if(savedProductString){
   new Product('wine-glass', 'images/wine-glass.jpg');
 }
 
-// function getRandomNumber() {
-//   return Math.floor(Math.random() * Product.allProductsArray.length);
-// }
-
 function getProductArray(nameOfThePropertyIWant){
   let arrayResults = [];
   for(let i = 0; i < Product.allProductsArray.length; i++){
@@ -96,48 +86,38 @@ function getProductArray(nameOfThePropertyIWant){
 
 
 function renderProducts() {
-  // let product1 = getRandomNumber();
-  // let product2 = getRandomNumber();
-  // let product3 = getRandomNumber();
-// refactor math
   let product1 = Math.floor(Math.random() * Product.allProductsArray.length);
   let product2 = Math.floor(Math.random() * Product.allProductsArray.length);
   let product3 = Math.floor(Math.random() * Product.allProductsArray.length);
-  // console.log(product1,product2,product3);
 
-  // while(product1 === product3){
-  //   product3 = getRandomNumber();
-  // }
-
-  while(product1 === image1 || product1 === product2){
+  //a new image for place compared to the last image that was in place and we will not the same image in the other two indexs.
+  while(product1 === image1 || product1 === image2 || product1 === image3){
     product1 = Math.floor(Math.random() * Product.allProductsArray.length);
   }
-  while(product2 === image2 || product1 === product2){
+  while(product1 === product2 || product3 === product2 || product2 === image2){
     product2 = Math.floor(Math.random() * Product.allProductsArray.length);
   }
-  // while(product3 === image3 || product1 === product2){
-  //   product2 = Math.floor(Math.random() * Product.allProductsArray.length);
-  // }
+  while(product1 === product3 || product3 === image2 || product3 === image3){
+    product3 = Math.floor(Math.random() * Product.allProductsArray.length);
+  }
+
   // setup a ref to the product array
   image1 = product1;
   image2 = product2;
   image3 = product3;
+  console.log('numbers for images: ',image1, image2, image3);
 
-  // image1.src = Product.allProductsArray[product1].src;
-  // image2.src = Product.allProductsArray[product2].src;
-  // image3.src = Product.allProductsArray[product3].src;
   imageElements[0].src = Product.allProductsArray[product1].src;
   imageElements[1].src = Product.allProductsArray[product2].src;
   imageElements[2].src = Product.allProductsArray[product3].src;
 
-  imageElements[0].src = Product.allProductsArray[product1].name;
-  imageElements[1].src = Product.allProductsArray[product2].name;
-  imageElements[2].src = Product.allProductsArray[product3].name;
+  imageElements[0].alt = Product.allProductsArray[product1].name;
+  imageElements[1].alt = Product.allProductsArray[product2].name;
+  imageElements[2].alt = Product.allProductsArray[product3].name;
 
   Product.allProductsArray[product1].views++;
   Product.allProductsArray[product2].views++;
   Product.allProductsArray[product3].views++;
-
 }
 
 function handleProductClick(event) {
@@ -192,9 +172,6 @@ function renderResults(){
   showResultChart();
 }
 
-
-
-
 renderProducts();
 
 productContainer.addEventListener('click', handleProductClick);
@@ -208,17 +185,12 @@ function showResultChart(){
   let votePercentage = [];
 
   for (let i = 0; i < Product.allProductsArray.length; i++) {
-  // update 4 arrays
     console.log('Test from array' ,Product.allProductsArray[i].name);
     labels[i] = Product.allProductsArray[i].name;
     voteCounts[i] = Product.allProductsArray[i].click;
     showCounts[i] = Product.allProductsArray[i].views;
     votePercentage[i] = Math.floor(100 * (voteCounts[i] / showCounts[i]));
-
   }
-
-
-
   console.log('labels' ,labels);
   console.log('voteCounts' ,voteCounts);
   console.log('showCounts' ,showCounts);
